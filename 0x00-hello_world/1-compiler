@@ -1,0 +1,10 @@
+#!/bin/bash
+
+# Set the C file name
+CFILE="main.c"
+
+# Extract the base name of the C file without the extension
+BASENAME="${CFILE%.*}"
+
+# Compile the C file without linking
+gcc -c "$CFILE" -o "$BASENAME.o"
