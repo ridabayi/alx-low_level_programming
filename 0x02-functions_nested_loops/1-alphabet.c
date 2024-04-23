@@ -5,7 +5,7 @@
  *
  * Description: Prints the alphabet in lowercase followed by a newline
  *
- * Retunr: 0 
+ * Return: Always 0
  */
 
 void print_alphabet(void)
@@ -17,5 +17,6 @@ void print_alphabet(void)
 		_putchar(letter);
 		letter++;
 	}
+
 	_putchar('\n');
 }
