@@ -3,23 +3,24 @@
 /**
  * main - Entry point
  *
+ * Description: Prints the first 98 Fibonacci numbers
  * Return: Always 0 (Success)
  */
 int main(void)
 {
-	unsigned long int count;
-	unsigned long int first = 1, second = 2, next;
+    int count;
+    unsigned long n1 = 0, n2 = 1, n3;
 
-	printf("%lu, %lu", first, second);
+    for (count = 0; count < 97; count++)
+    {
+        n3 = n1 + n2;
+        printf("%lu, ", n3);
+        n1 = n2;
+        n2 = n3;
+    }
 
-	for (count = 3; count <= 98; count++)
-	{
-		next = first + second;
-		printf(", %lu", next);
-		first = second;
-		second = next;
-	}
-	printf("\n");
+    n3 = n1 + n2;
+    printf("%lu\n", n3);
 
-	return (0);
+    return (0);
 }
