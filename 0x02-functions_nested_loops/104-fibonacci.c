@@ -7,34 +7,19 @@
  */
 int main(void)
 {
-	unsigned long int fib1 = 1, fib2 = 2, next;
+    unsigned long int fib1 = 1, fib2 = 2, next;
 
-	printf("%lu", fib1);
+    printf("%lu, %lu", fib1, fib2); // Print the first two Fibonacci numbers
 
-	for (int i = 1; i < 91; i++)
-	{
-		printf(", %lu", fib2);
-		next = fib1 + fib2;
-		fib1 = fib2;
-		fib2 = next;
-	}
+    for (int i = 2; i < 98; i++) // Start the loop from 2 since we've already printed the first two Fibonacci numbers
+    {
+        next = fib1 + fib2; // Calculate the next Fibonacci number
+        printf(", %lu", next); // Print the next Fibonacci number
+        fib1 = fib2; // Update the variables for the next iteration
+        fib2 = next;
+    }
 
-	unsigned long int fib1_high = fib1 / 1000000000;
-	unsigned long int fib1_low = fib1 % 1000000000;
-	unsigned long int fib2_high = fib2 / 1000000000;
-	unsigned long int fib2_low = fib2 % 1000000000;
+    printf("\n"); // Print a new line at the end
 
-	for (int i = 92; i < 99; ++i)
-	{
-		printf(", %lu", fib1_high + (fib2_high / 1000000000));
-		printf("%lu", fib2_low);
-		fib1_high += fib2_high;
-		fib2_high = fib1_high - fib2_high;
-		fib2_low += fib1_low;
-		fib1_low = fib2_low - fib1_low;
-	}
-
-	printf("\n");
-
-	return (0);
+    return (0);
 }
