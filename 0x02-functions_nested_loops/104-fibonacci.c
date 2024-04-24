@@ -7,24 +7,19 @@
  */
 int main(void)
 {
-    int count, max;
-    unsigned int first = 1, second = 2, next;
+	int count;
+	unsigned int first = 1, second = 2, next;
 
-    count = 2; /* Already including the first two numbers (1 and 2) */
-    max = 98; /* Number of Fibonacci numbers to print */
+	printf("%u, %u", first, second);
 
-    printf("%u, %u", first, second);
+	for (count = 3; count <= 98; count++)
+	{
+		next = first + second;
+		printf(", %u", next);
+		first = second;
+		second = next;
+	}
+	printf("\n");
 
-    while (count < max)
-    {
-        next = first + second;
-        printf(", %u", next);
-        first = second;
-        second = next;
-        count++;
-    }
-
-    printf("\n");
-
-    return (0);
+	return (0);
 }
