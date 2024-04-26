@@ -1,32 +1,35 @@
 #include "main.h"
 
 /**
- * print_number - Integer
- * @n: params an integer
- * Return: No return
+ * print_number - integer number.
+ * @n: input integer.
+ * Return: no return.
  */
-
-
-void print_number(int i)
+void print_number(int n)
 {
-
-	unsigned int j = 0;
-
-	if  (i < 0)
+	unsigned int i, j, count;
+	
+	if (n < 0)
 	{
-		j = -i;
-		_putchar('-');
+		_putchar(45);
+		i = n * -1;
 	}
-
 	else
 	{
-		j = i;
+		i = n;
 	}
 
-	if (j / 10)
+	d = i;
+	count = 1;
+
+	while (j > 9)
 	{
-		print_number(j / 10);
+		j /= 10;
+		count *= 10;
 	}
 
-	_putchar((j % 10) + '0');
+	for (; count >= 1; count /= 10)
+	{
+		_putchar(((i / count) % 10) + 48);
+	}
 }
