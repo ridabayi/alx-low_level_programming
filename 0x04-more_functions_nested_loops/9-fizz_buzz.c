@@ -12,17 +12,39 @@ void fizzbuzz(int n)
 
     for (i = 1; i <= n; i++)
     {
-        if (i % 15 == 0)
-            _putchar("FizzBuzz ");
-        else if (i % 3 == 0)
-            _putchar("Fizz ");
-        else if (i % 5 == 0)
-            _putchar("Buzz ");
-        else
-            _putchar(i + '0');
-        
-        if (i != n)
-            _putchar(' ');
+        switch (i % 15)
+        {
+            case 0:
+                _putchar("FizzBuzz ");
+                break;
+            case 3:
+            case 6:
+            case 9:
+            case 12:
+                _putchar("Fizz ");
+                break;
+            case 5:
+            case 10:
+                _putchar("Buzz ");
+                break;
+            default:
+                _putchar(i + '0');
+                if (i != n)
+                    _putchar(' ');
+                break;
+        }
     }
     _putchar('\n');
+}
+
+/**
+ * main - Entry point
+ *
+ * Return: Always 0
+ */
+int main(void)
+{
+    fizzbuzz(100);
+
+    return (0);
 }
