@@ -11,15 +11,15 @@
  */
 char *_strncpy(char *dest, char *src, int n)
 {
-	int i;
+    int i;
 
-	/* Copy src to dest up to n characters */
-	for (i = 0; i < n && src[i] != '\0'; i++)
-		dest[i] = src[i];
+    /* Copy src to dest up to n characters */
+    for (i = 0; i < n && src[i] != '\0'; i++)
+        dest[i] = src[i];
 
-	/* Pad dest with null bytes if n is greater than src length */
-	for (; i < n; i++)
-		dest[i] = '\0';
+    /* Pad dest with null bytes if n is greater than src length */
+    for (; i < n; i++)
+        dest[i] = '\0';
 
-	return dest;
+    return dest;
 }
