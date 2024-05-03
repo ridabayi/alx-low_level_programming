@@ -1,28 +1,24 @@
 #include "main.h"
 
-/**
- * custom_strcat - Concatenates two strings.
- * @destination: Pointer to destination string.
- * @source: Pointer to source string.
- *
- * Return: Pointer to destination string.
+/*
+ * Custom string concatenation function.
+ * Concatenates two strings.
+ * @param dest: Destination string.
+ * @param src: Source string to be concatenated.
+ * @return: Pointer to the concatenated string.
  */
-char *custom_strcat(char *destination, const char *source)
-{
-    char *ptr = destination;
-    
-    while (*ptr)
-        ptr++;
-    
-    while (*source)
-    {
-        *ptr = *source;
-        ptr++;
-        source++;
-    }
-    
-    *ptr = '\0';
-    
-    return destination;
-}
+char *customStringConcat(char *dest, char *src) {
+    int i = 0, n = 0;
 
+    // Finding the end of the destination string
+    while (dest[i] != '\0') {
+        i++;
+    }
+
+    // Appending the source string to the destination
+    while ((dest[i + n] = *src++) != '\0') {
+        n++;
+    }
+
+    return dest;
+}
