@@ -1,23 +1,25 @@
 #include "main.h"
+#include <stdio.h>
 
 /**
- * custom_strncpy - Copies a string up to n characters.
- * @destination: Pointer to destination string.
- * @source: Pointer to source string.
- * @n: Maximum number of characters to copy.
+ * _strncpy - Copies a string.
+ * @dest: The destination string.
+ * @src: The source string.
+ * @n: The maximum number of characters to be copied from src.
  *
- * Return: Pointer to destination string.
+ * Return: A pointer to the resulting string dest.
  */
-char *custom_strncpy(char *destination, const char *source, int n)
+char *_strncpy(char *dest, char *src, int n)
 {
-    int i;
-    
-    for (i = 0; i < n && source[i] != '\0'; i++)
-        destination[i] = source[i];
-    
-    for (; i < n; i++)
-        destination[i] = '\0';
-    
-    return destination;
-}
+	int i;
 
+	/* Copy src to dest up to n characters */
+	for (i = 0; i < n && src[i] != '\0'; i++)
+		dest[i] = src[i];
+
+	/* Pad dest with null bytes if n is greater than src length */
+	for (; i < n; i++)
+		dest[i] = '\0';
+
+	return dest;
+}
