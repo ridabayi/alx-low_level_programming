@@ -6,7 +6,6 @@
  *
  * Return: A pointer to the resulting string.
  */
-
 char *leet(char *s)
 {
     int i, j;
@@ -29,5 +28,5 @@ char *leet(char *s)
         i++;
     }
 
-    return s;
+    return (s);
 }
