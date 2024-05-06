@@ -1,40 +1,27 @@
 #include "main.h"
-
+#include <stdio.h>
 /**
- * rot13 - Encodes a string using ROT13.
- * @s: The string to encode.
- *
- * Return: A pointer to the resulting string.
+ * rot13 - encode using rot13
+ * @s: variable
+ * Return: A pointer to the resulting string
  */
 char *rot13(char *s)
 {
-    int i;
-    char *ptr = s;
-    char *alpha_lower = "abcdefghijklmnopqrstuvwxyz";
-    char *alpha_upper = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
-    char *rot13_lower = "nopqrstuvwxyzabcdefghijklm";
-    char *rot13_upper = "NOPQRSTUVWXYZABCDEFGHIJKLM";
+	int i = 0, i2 = 0;
+	char alpha[] = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ";
+	char alpha2[] = "nopqrstuvwxyzabcdefghijklmNOPQRSTUVWXYZABCDEFGHIJKLM";
 
-    while (*ptr != '\0')
-    {
-        if ((*ptr >= 'a' && *ptr <= 'z') || (*ptr >= 'A' && *ptr <= 'Z'))
-        {
-            for (i = 0; alpha_lower[i] != '\0'; i++)
-            {
-                if (*ptr == alpha_lower[i])
-                {
-                    *ptr = rot13_lower[i];
-                    break;
-                }
-                else if (*ptr == alpha_upper[i])
-                {
-                    *ptr = rot13_upper[i];
-                    break;
-                }
-            }
-        }
-        ptr++;
-    }
-
-    return s;
+	while (*(s + i) != 0)
+	{
+		for (i2 = 0; i2 <= 52; i2++)
+		{
+			if (*(s + i) == alpha[i2])
+			{
+				*(s + i) = alpha2[i2];
+				break;
+			}
+		}
+				i++;
+	}
+		return (s);
 }
