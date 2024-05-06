@@ -1,39 +1,32 @@
 #include "main.h"
+#include <stdio.h>
 
 /**
  * cap_string - Capitalizes all words of a string.
- * @str: The string to capitalize.
+ * @s: The string to capitalize.
  *
- * Return: Pointer to the resulting string.
+ * Return: A pointer to the resulting string.
  */
-char *cap_string(char *str)
+char *cap_string(char *s)
 {
-    int i = 0;
+    int a = 0, i;
+    int cspc = 13;
+    char spc[] = {32, '\t', '\n', 44, ';', 46, '!', '?', '"', '(', ')', '{', '}'};
 
-    while (str[i] != '\0')
+    while (s[a])
     {
-        /* Check if the current character is a separator */
-        if (str[i] == ' ' || str[i] == '\t' || str[i] == '\n' ||
-            str[i] == ',' || str[i] == ';' || str[i] == '.' ||
-            str[i] == '!' || str[i] == '?' || str[i] == '"' ||
-            str[i] == '(' || str[i] == ')' || str[i] == '{' ||
-            str[i] == '}')
+        i = 0;
+
+        while (i < cspc)
         {
-            /* Move to the next character */
-            i++;
-            /* Check if the next character is a lowercase letter */
-            if (str[i] >= 'a' && str[i] <= 'z')
-            {
-                /* Convert the letter to uppercase */
-                str[i] -= 32;
-            }
-        }
-        else
-        {
-            /* Move to the next character */
+            if ((a == 0 || s[a - 1] == spc[i]) && (s[a] >= 97 && s[a] <= 122))
+                s[a] -= 32;
+
             i++;
         }
+
+        a++;
     }
 
-    return str;
+    return (s);
 }
